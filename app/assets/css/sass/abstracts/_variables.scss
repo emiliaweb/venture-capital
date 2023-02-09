@@ -7,10 +7,13 @@
     --clr-ntr-100: #000000;
     --clr-ntr-200: #FCFCFC;
     --clr-ntr-300: #ffffff;
+    --clr-ntr-400: #E3E7EA;
 
     // font
     --ff-primary: 'Inter', sans-serif;
 
     // other 
     --header-bg: var(--clr-prm-100);
+    --body-text-clr: var(--clr-ntr-100);
+    --btn-bg: var(--clr-prm-200);
 }

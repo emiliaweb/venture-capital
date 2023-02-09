@@ -12,3 +12,19 @@
         padding: 0 20px;
     }
 }
+
+.body-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--body-text-clr);
+    @media (max-width: 1440px) {
+        font-size: clamp(16px, 1.5vw, 20px);
+    }
+}
+
+.s-hidden {
+    @media (max-width: 1023px) {
+        display: none !important;
+    }
+}

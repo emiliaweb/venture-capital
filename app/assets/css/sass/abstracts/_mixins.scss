@@ -2,3 +2,16 @@
     padding: 0;
     list-style: none;
 }
+
+@mixin title($fw) {
+    font-size: 36px;
+    line-height: 1.25em;
+    font-weight: $fw;
+    text-transform: uppercase;
+    span {
+        color: var(--clr-prm-100);
+    }
+    @media (max-width: 1440px) {
+        font-size: clamp(22px, 2.7vw, 36px);
+    }
+}

@@ -1,0 +1,22 @@
+.btn {
+    border-radius: 8px;
+    background-color: var(--btn-bg);
+    padding: 18px 32px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 18px;
+    max-width: max-content;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: var(--clr-ntr-300);
+    img {
+        flex-shrink: 0;
+        transition: all .3s;
+    }
+    &:hover {
+        img {
+            transform: scale(1.15);
+        }
+    }
+}
