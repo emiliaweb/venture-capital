@@ -68,6 +68,9 @@
             align-items: center;
             row-gap: 14px;
             margin-top: 70px;
+            &-item, &-item a {
+                font-size: 18px;
+            }
         }
         &-hamburger {
             padding: 0;
