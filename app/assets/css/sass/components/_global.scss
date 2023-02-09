@@ -28,3 +28,9 @@
         display: none !important;
     }
 }
+
+.m-hidden {
+    @media (min-width: 1024px) {
+        display: none !important;
+    }
+}
