@@ -1,0 +1,14 @@
+* {
+    font-family: var(--ff-primary);
+}
+
+.container {
+    max-width: 1370px;
+    margin: 0 auto;
+    @media (max-width: 1439px) {
+        padding: 0 40px;
+    }
+    @media (max-width: 1023px) {
+        padding: 0 20px;
+    }
+}

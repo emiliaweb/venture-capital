@@ -1,3 +1,16 @@
 :root {
+    // primary
+    --clr-prm-100: #0A4F37;
+    --clr-prm-200: #5EB674;
 
+    // neutral
+    --clr-ntr-100: #000000;
+    --clr-ntr-200: #FCFCFC;
+    --clr-ntr-300: #ffffff;
+
+    // font
+    --ff-primary: 'Inter', sans-serif;
+
+    // other 
+    --header-bg: var(--clr-prm-100);
 }
