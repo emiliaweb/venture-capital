@@ -12,18 +12,31 @@ window.addEventListener('DOMContentLoaded', () => {
             const link = e.target.href;
             console.log(link);
             newsIframe.src = link;
-            resizeIframe(newsIframe);
-            setTimeout(() => {
+            // resizeIframe(newsIframe);
+            // setTimeout(() => {
+            //     newsIframe.scrollIntoView();
+            //     newsIframe.contentWindow.addEventListener('click', e => {
+            //         if (e.target.matches('[data-close-post]')) {
+            //             newsIframe.style.height = 0;
+            //             setTimeout(() => {
+            //                 newsIframe.src = null;
+            //             }, 300)
+            //         }
+            //     })
+            // }, 300);
+            newsIframe.addEventListener('load', () => {
+                console.log('loaded');
+                resizeIframe(newsIframe);
                 newsIframe.scrollIntoView();
                 newsIframe.contentWindow.addEventListener('click', e => {
                     if (e.target.matches('[data-close-post]')) {
                         newsIframe.style.height = 0;
                         setTimeout(() => {
-                            newsIframe.src = null;
+                            newsIframe.src = '';
                         }, 300)
                     }
                 })
-            }, 300);
+            })
         }
     });
 
