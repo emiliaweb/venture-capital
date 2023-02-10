@@ -1,0 +1,175 @@
+.struct {
+    padding: 100px 0 104px;
+    background: url('../img/struct-bg.png') center center / cover no-repeat;
+    &-grid {
+        @media (min-width: 1180px) {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            align-items: flex-end;
+        }
+    }
+    &-title {
+        @include title(800);
+    }
+    &-map {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 34px;
+        @media (max-width: 1179px) {
+            margin-top: 30px;
+        }
+    }
+    &-wrap {
+        display: flex;
+        column-gap: 32px;
+        .struct-block {
+            @media (min-width: 1024px) {
+                min-width: 348px;
+            }
+        }
+    }
+    &-block {
+        background: var(--clr-ntr-300);
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        max-width: 464px;
+        padding: 20px 10px 18px;
+        text-align: center;
+        @media (min-width: 767px) {
+            min-width: 320px;
+        }
+        @media (min-width: 1024px) {
+            min-width: 464px;
+        }
+        &-text {
+            max-width: 326px;
+            margin: 0 auto;
+            font-weight: 400;
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 24px;
+            color: var(--clr-prm-100);
+        }
+        &.arrow-down {
+            position: relative;
+            &::after {
+                content: '';
+                background: url('../img/icons/arrow-down-white.svg') center center / contain no-repeat;
+                display: block;
+                width: 16px;
+                height: 28px;
+                position: absolute;
+                bottom: -28px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &.arrow-right-down {
+            position: relative;
+            &::after {
+                content: '';
+                background: url('../img/icons/arrow-right-down-white.svg') center center / contain no-repeat;
+                display: block;
+                width: 26px;
+                height: 150px;
+                position: absolute;
+                right: -22px;
+                top: 46px;
+            }
+        }
+        &.add-text {
+            position: relative;
+            &::before {
+                content: attr(data-text);
+                font-weight: 600;
+                font-size: clamp(10px, 1.5vw, 16px);
+                line-height: 1.2em;
+                color: var(--clr-prm-100);
+                position: absolute;
+                left: calc(100% + 45px);
+                top: 86px;
+                @media (min-width: 1260px) {
+                    width: 204px;
+                }
+            }
+        }
+        &.arrow-down-double {
+            position: relative;
+            &::after, &::before {
+                content: '';
+                background: url('../img/icons/arrow-down-white.svg') center center / contain no-repeat;
+                display: block;
+                width: 16px;
+                height: 28px;
+                position: absolute;
+                bottom: -28px;
+            }
+            &::after {
+                right: 45px;
+            }
+            &::before {
+                left: 45px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .struct {
+        &-block {
+            max-width: 320px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .struct {
+        &-map {
+            align-items: flex-start;
+        }
+        &-block {
+            max-width: 100%;
+            width: 100%;
+            padding: 10px 2px;
+            &:nth-child(1), &:nth-child(2) {
+                width: 100%;
+            }
+            &:nth-child(3), &:nth-child(4) {
+                width: 67%;
+                max-width: 190px;
+                min-height: 160px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &.add-text {
+                &::before {
+                    left: calc(100% + 26px);
+                    top: 120px;
+                }
+            }
+            &.arrow-right-down {
+                &::after {
+                    background: url('../img/icons/arrow-right-down-white-long.svg') center center / contain no-repeat;
+                    width: 20px;
+                    height: 218px;
+                    position: absolute;
+                    right: -18px;
+                    top: 46px;
+                }
+            }
+            &.arrow-down-double {
+                &::after {
+                    right: 45px;
+                    background-image: url('../img/icons/arrow-right-down-white-wide.svg');
+                    width: 37px;
+                    height: 72px;
+                    left: calc(100%);
+                }
+            }
+        }
+        &-wrap {
+            column-gap: 12px;
+        }
+    }
+}
