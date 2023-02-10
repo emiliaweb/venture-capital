@@ -1,0 +1,151 @@
+.news {
+    padding: 70px 0 100px;
+    &-title {
+        @include title(800);
+    }
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-wrap {
+        margin-top: 52px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 312px;
+        gap: 30px;
+    }
+    &-item {
+        position: relative;
+        padding: 36px 70px 36px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-decoration: none;
+        &:hover {
+            &::after {
+                transform: rotate(-20deg);
+            }
+            .news-item-img {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: 30px;
+            bottom: 36px;
+            background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_309)'%3E%3Crect width='30' height='30' rx='15' fill='%235EB674'/%3E%3Cpath d='M8 14C7.44772 14 7 14.4477 7 15C7 15.5523 7.44772 16 8 16V14ZM22.7071 15.7071C23.0976 15.3166 23.0976 14.6834 22.7071 14.2929L16.3431 7.92893C15.9526 7.53841 15.3195 7.53841 14.9289 7.92893C14.5384 8.31946 14.5384 8.95262 14.9289 9.34315L20.5858 15L14.9289 20.6569C14.5384 21.0474 14.5384 21.6805 14.9289 22.0711C15.3195 22.4616 15.9526 22.4616 16.3431 22.0711L22.7071 15.7071ZM8 16L22 16V14L8 14V16Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_309'%3E%3Crect width='30' height='30' rx='15' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            width: 30px;
+            height: 30px;
+            transition: all .3s;
+        }
+        &-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .3s;
+            }
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.2em;
+        }
+        &-body {
+            font-family: var(--ff-secondary);
+            position: relative;
+            z-index: 1;
+            color: var(--clr-ntr-300);
+        }
+        &-descr {
+            margin-top: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.2em;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        &:nth-child(1) {
+            @media (min-width: 1340px) {
+                grid-column: span 2;
+            }
+        }
+        &:nth-child(3n+1) {
+            &::before {
+                background: linear-gradient(180deg, rgba(94, 182, 116, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
+                backdrop-filter: blur(5px);
+            }
+        }
+        &:nth-child(3n+2) {
+            &::before {
+                background: linear-gradient(180deg, rgba(54, 54, 54, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
+            }
+        }
+        &:nth-child(3n+3) {
+            &::before {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
+            }
+        }
+    }
+}
+
+@media (max-width: 1339px) {
+    .news {
+        &-wrap {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .news {
+        &-wrap {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 14px;
+        }
+        &-btn {
+            margin-top: 36px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        &-item {
+            padding: 20px 50px 20px 15px;
+            &::after {
+                bottom: 20px;
+                right: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 399px) {
+    .news {
+        &-btn {
+            width: 100%;
+            max-width: 100%;
+            justify-content: center;
+        }
+    }
+}
