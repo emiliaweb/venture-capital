@@ -3,6 +3,14 @@ window.addEventListener('DOMContentLoaded', () => {
         obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
     }
 
+    function scrollIntoViewport(element) {
+        const y = element.offsetTop;
+        window.scrollTo({
+            top: y,
+            behavior: 'smooth'
+        });
+    }
+
     const news = document.querySelector('[data-news-container]');
     const newsIframe = document.querySelector('.news-single iframe');
 
@@ -11,7 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('news-item')) {
             const link = e.target.href;
             newsIframe.src = link;
-            newsIframe.scrollIntoView();
             // resizeIframe(newsIframe);
             // setTimeout(() => {
             //     newsIframe.scrollIntoView();
@@ -26,6 +33,11 @@ window.addEventListener('DOMContentLoaded', () => {
             // }, 300);
             newsIframe.addEventListener('load', () => {
                 resizeIframe(newsIframe);
+
+                setTimeout(() => {
+                    scrollIntoViewport(newsIframe);
+                }, 300)
+
                 newsIframe.contentWindow.addEventListener('click', e => {
                     if (e.target.matches('[data-close-post]')) {
                         newsIframe.style.height = 0;
