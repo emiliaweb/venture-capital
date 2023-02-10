@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (e.target.classList.contains('news-item')) {
             const link = e.target.href;
-            console.log(link);
+            // console.log(link);
             newsIframe.src = link;
             // resizeIframe(newsIframe);
             // setTimeout(() => {
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
             //     })
             // }, 300);
             newsIframe.addEventListener('load', () => {
-                console.log('loaded');
+                // console.log('loaded');
                 resizeIframe(newsIframe);
                 newsIframe.scrollIntoView();
                 newsIframe.contentWindow.addEventListener('click', e => {
