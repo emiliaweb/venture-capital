@@ -8,4 +8,77 @@
         gap: 20px;
         flex-wrap: wrap;
     }
+    &-table {
+        margin-top: 50px;
+        --padding-tb: 36px;
+        --padding-lr: 56px;
+        background: var(--clr-ntr-300);
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        border: 0;
+        border-collapse: collapse;
+        &-row {
+            &:nth-child(2n+1) {
+                background: #FAFAFA;
+                .join-table-descr {
+                    font-size: 16px;
+                }
+            }
+        }
+        &-title {
+            padding: var(--padding-tb) var(--padding-lr);
+            text-align: left;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 1.2em;
+            text-transform: uppercase;
+            color: var(--clr-prm-100);
+            span.slash {
+                display: block;
+                position: relative;
+                padding-left: 31px;
+                max-width: 310px;
+                &::before {
+                    content: '/';
+                    font-weight: 700;
+                    font-size: 50px;
+                    color: rgba(94, 182, 116, 0.53);
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &-descr {
+            padding: var(--padding-tb) var(--padding-lr);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.2em;
+            ol {
+                counter-reset: list;
+                padding-left: 0;
+            }
+            ol > li {
+                list-style: none;
+            }
+            ol > li:before {
+                content: counter(list) ") ";
+                counter-increment: list;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .join {
+        &-table {
+            &-title {
+                font-size: 16px;
+            }
+            &-descr {
+                font-size: 14px !important;
+            }
+        }
+    }
 }
