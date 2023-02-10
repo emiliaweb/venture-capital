@@ -10,8 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (e.target.classList.contains('news-item')) {
             const link = e.target.href;
-            // console.log(link);
             newsIframe.src = link;
+            newsIframe.scrollIntoView();
             // resizeIframe(newsIframe);
             // setTimeout(() => {
             //     newsIframe.scrollIntoView();
@@ -25,9 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
             //     })
             // }, 300);
             newsIframe.addEventListener('load', () => {
-                // console.log('loaded');
                 resizeIframe(newsIframe);
-                newsIframe.scrollIntoView();
                 newsIframe.contentWindow.addEventListener('click', e => {
                     if (e.target.matches('[data-close-post]')) {
                         newsIframe.style.height = 0;
