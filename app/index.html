@@ -184,8 +184,8 @@
                     <img src="assets/img/icons/plus-white.svg" alt="plus" aria-hidden="true">
                 </a>
             </div>
-            <div class="news-wrap">
-                <a href="#" class="news-item">
+            <div class="news-wrap" data-news-container>
+                <a href="single.html#1" class="news-item">
                     <div class="news-item-img">
                         <img src="assets/img/news-1.jpg" alt="news post">
                     </div>
@@ -194,7 +194,7 @@
                         <div class="news-item-descr">Краткое описание новости Краткое описание новости</div>
                     </div>
                 </a>
-                <a href="#" class="news-item">
+                <a href="single.html#2" class="news-item">
                     <div class="news-item-img">
                         <img src="assets/img/news-2.jpg" alt="news post">
                     </div>
@@ -203,7 +203,7 @@
                         <div class="news-item-descr hidden">Краткое описание новости Краткое описание новости</div>
                     </div>
                 </a>
-                <a href="#" class="news-item">
+                <a href="single.html#3" class="news-item">
                     <div class="news-item-img">
                         <img src="assets/img/news-3.jpg" alt="news post">
                     </div>
@@ -220,6 +220,17 @@
         </div>
     </section>
 
+    <!-- 
+        Показ новостей реализован через iframe с учетом посадки на вордпресс в дальнейшем
+        news-single можно не менять совсем, вывести новости только в секции news, а дальше скрипт single-on-page.js сам обо всем позаботится. 
+        Главное превратить single.html в шаблон записи single.php.
+    -->
+
+    <div class="news-single">
+        <iframe src="" frameborder="0" scrolling="no" style="height: 0;"></iframe>
+    </div>
+
+    <script src="assets/js/single-on-page.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

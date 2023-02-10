@@ -149,3 +149,11 @@
         }
     }
 }
+
+.news-single {
+    iframe {
+        width: 100%;
+        transition: all .5s;
+        overflow: hidden;
+    }
+}
