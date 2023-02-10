@@ -5,14 +5,18 @@
         @include title(800)
     }
     &-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @media (min-width: 1024px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
     &-members {
-        display: flex;
-        align-items: center;
-        gap: 53px;
+        @media (min-width: 768px) {
+            display: flex;
+            align-items: center;
+            gap: 53px;
+        }
         border: 1px solid #CCCCCC;
         border-radius: 8px;
         padding: 12px 49px 12px 25px;
@@ -35,10 +39,15 @@
     &-list {
         margin-top: 69px;
         &-item {
-            display: flex;
-            column-gap: 49px;
+            @media (min-width: 768px) {
+                display: flex;
+                column-gap: 49px;
+            }
             &:not(:last-child) {
                 margin-bottom: 56px;
+                @media (max-width: 767px) {
+                    margin-bottom: 45px;
+                }
             }
         }
         &-icon {
@@ -75,7 +84,7 @@
         }
         &-title {
             font-weight: 800;
-            font-size: 24px;
+            font-size: clamp(18px, 2vw, 24px);
             line-height: 1.2em;
             text-transform: uppercase;
             text-align: center;
@@ -83,11 +92,11 @@
         &-list {
             @include list-reset;
             font-weight: 400;
-            font-size: 18px;
+            font-size: clamp(16px, 1.5vw, 18px);
             line-height: 1.2em;
             margin-top: 48px;
             li {
-                padding-left: 58px;
+                padding-left: 3.2em;
                 position: relative;
                 max-width: 490px;
                 &:not(:last-child) {
@@ -95,12 +104,12 @@
                 }
                 &::before {
                     font-weight: 700;
-                    font-size: 50px;
+                    font-size: clamp(40px, 4vw, 50px); // 50px
                     line-height: 1.2em;
                     color: rgba(94, 182, 116, 0.5);
                     position: absolute;
                     left: 0;
-                    top: -10px;
+                    top: -.15em;
                 }
             }
             &--slashes {
@@ -120,6 +129,72 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 1259px) {
+    .about {
+        &-block {
+            padding: 40px 30px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .about {
+        &-members {
+            margin-top: 18px;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media (max-width: 916px) {
+    .about {
+        &-blocks {
+            grid-template-columns: 1fr;
+            row-gap: 18px;
+        }
+        &-block {
+            padding: 24px 14px;
+            &-list {
+                li {
+                    padding-left: 36px;
+                    max-width: 100%;
+                }
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 767px) {
+    .about {
+        padding: 40px 0 45px;
+        &-members {
+            margin-top: 18px;
+            padding: 24px 16px;
+            &-title {
+                font-size: 18px;
+            }
+            &-items {
+                margin-top: 21px;
+                justify-content: space-between;
+                gap: 0;
+            }
+            &-item {
+                flex-shrink: 0;
+            }
+        }
+        &-list {
+            margin-top: 40px;
+            &-text {
+                margin-top: 21px;
+            }
+        }
+        &-blocks {
+            margin-top: 45px;
         }
     }
 }
