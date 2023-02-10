@@ -21,4 +21,12 @@
     &--narrow {
         padding: 12px 22px;
     }
+    &--ghost {
+        background-color: transparent;
+        border: 2px solid var(--btn-bg);
+        color: var(--btn-bg);
+        font-size: clamp(16px, 1.5vw, 20px);
+        font-weight: 500;
+        column-gap: 10px;
+    }
 }
