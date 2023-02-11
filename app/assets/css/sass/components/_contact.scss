@@ -1,0 +1,125 @@
+.contact {
+    padding: 70px 0 110px;
+    @media (max-width: 1023px) {
+        padding: 40px 0 60px;
+    }
+    &-title {
+        @include title(800);
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        column-gap: 40px;
+        align-items: center;
+    }
+    &-quote {
+        margin-top: 20px;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2em;
+        position: relative;
+        padding: 0 0 0 1.6em;
+        max-width: 627px;
+        &::before {
+            content: '«';
+            position: absolute;
+            left: -2px;
+            top: -5px;
+        }
+        &::after {
+            content: '»';
+            // right: 0px;
+            // bottom: 0px;
+            vertical-align: middle;
+        }
+        &::before, &::after {
+            font-size: 2.5em;
+            color: var(--clr-prm-200);
+        }
+    }
+    &-list {
+        @include list-reset;
+        margin-top: 36px;
+        &-item, &-link {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.2em;
+            color: var(--clr-ntr-100);
+        }
+        &-link {
+            display: flex;
+            column-gap: 1.2em;
+            transition: all .5s;
+            &:hover {
+                color: var(--clr-prm-200);
+            }
+        }
+        &-item {
+            &:not(:last-child) {
+                margin-bottom: 1.2em;
+            }
+        }
+        &-img {
+            margin-top: -5px;
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+    }
+    &-map {
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        overflow: hidden;
+        iframe {
+            width: 100%;
+            height: 341px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .contact {
+        &-quote {
+            font-size: 16px;
+        }
+        &-list {
+            &-item, &-link {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contact {
+        &-list {
+            &-img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &-grid {
+            grid-template-columns: 1fr;
+            row-gap: 28px;
+        }
+    }
+}
+
+@media (max-width: 419px) {
+    .contact {
+        &-quote {
+            margin-top: 40px;
+            padding: 0 1.2em;
+            &::before {
+                position: absolute;
+                top: -20px;
+            }
+            &::after {
+                position: absolute;
+                bottom: -18px;
+            }
+        }
+    }
+}
