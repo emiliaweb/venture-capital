@@ -28,12 +28,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 newsIframe.contentWindow.addEventListener('click', e => {
                     if (e.target.matches('[data-close-post]')) {
-                        newsIframe.style.height = 0;
+                        newsIframe.src = '';
                         setTimeout(() => {
-                            newsIframe.src = '';
-                        }, 300)
+                            newsIframe.style.height = 0;
+                        }, 100);
                     }
-                })
+                });
             })
         }
     });
