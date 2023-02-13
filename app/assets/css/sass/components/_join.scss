@@ -72,14 +72,31 @@
             }
         }
     }
+    &-scrollbar {
+        @media (min-width: 820px) {
+            display: none;
+        }
+    }
 }
 
 @media (max-width: 1023px) {
     .join {
-        overflow: hidden;
+        &-scrollbar {
+            margin-top: 36px;
+            width: 100%;
+            background-color: #D9D9D9;
+            border-radius: 8px;
+            &-handle {
+                width: 87px;
+                height: 36px;
+            }     
+        }
+        &-outer {
+            max-width: 100%;
+        }
         &-wrap {
-            overflow-x: auto;
-            padding-bottom: 76px;
+            width: 100%;
+            overflow: scroll;
         }
         &-table {
             width: 100%;
