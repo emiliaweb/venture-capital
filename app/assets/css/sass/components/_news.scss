@@ -24,7 +24,7 @@
         text-decoration: none;
         &:hover {
             &::after {
-                transform: rotate(-20deg);
+                transform: rotate(90deg);
             }
             .news-item-img {
                 img {
