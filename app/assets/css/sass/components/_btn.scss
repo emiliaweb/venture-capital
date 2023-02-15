@@ -10,6 +10,9 @@
     font-size: 18px;
     line-height: 1.2em;
     color: var(--clr-ntr-300);
+    @media (max-width: 339px) {
+        column-gap: 5px;
+    }
     img {
         transition: all .3s;
     }
