@@ -40,12 +40,18 @@
         width: 554px;
         height: 440px;
     }
-    &-img, &-img img {
+    &-img, &-img img, &-img video {
         width: 100%;
         height: 100%;
     }
     &-img img {
         object-fit: cover;
+    }
+    &-img video {
+        object-fit: contain;
+    }
+    &-img:has(video) {
+        background-color: rgba(0, 0, 0, 0.2);
     }
     &-pagination {
         .swiper-pagination-bullet {

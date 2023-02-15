@@ -94,7 +94,7 @@
         &:nth-child(3n+1) {
             &::before {
                 background: linear-gradient(180deg, rgba(94, 182, 116, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
-                backdrop-filter: blur(5px);
+                // backdrop-filter: blur(5px);
             }
         }
         &:nth-child(3n+2) {
@@ -114,6 +114,18 @@
     .news {
         &-wrap {
             grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width: 1239px) {
+    .news {
+        &-item {
+            &:first-child {
+                .news-item-descr {
+                    display: none;
+                }
+            }
         }
     }
 }
